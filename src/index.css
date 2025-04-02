@@ -1,0 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 54% 94%;
+    --foreground: 0 0% 17.6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17.6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17.6%;
+
+    --primary: 354 70% 50%;
+    --primary-foreground: 36 54% 94%;
+
+    --secondary: 36 100% 94%;
+    --secondary-foreground: 0 0% 17.6%;
+
+    --muted: 36 15% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 36 54% 94%;
+    --accent-foreground: 0 0% 17.6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 354 70% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 17.6%;
+    --foreground: 36 54% 94%;
+
+    --card: 0 0% 20%;
+    --card-foreground: 36 54% 94%;
+
+    --popover: 0 0% 20%;
+    --popover-foreground: 36 54% 94%;
+
+    --primary: 354 70% 50%;
+    --primary-foreground: 36 54% 94%;
+
+    --secondary: 0 0% 22%;
+    --secondary-foreground: 36 54% 94%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 36 20% 80%;
+
+    --accent: 0 0% 25%;
+    --accent-foreground: 36 54% 94%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 54% 94%;
+
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 354 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .dish-card {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  .dish-card-image {
+    @apply transition-transform duration-500;
+  }
+
+  .dish-card:hover .dish-card-image {
+    @apply transform scale-110;
+  }
+
+  .btn-reservation {
+    @apply bg-restaurant-red text-white font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-opacity-90;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-playfair font-bold mb-6 text-restaurant-black dark:text-restaurant-cream;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Smooth scrolling for Safari */
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D72638;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b31f2d;
+}
